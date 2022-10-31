@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-
-const PORT = 3001;
+const fs = require('fs');
 
 const db = mysql.createConnection(
     {
@@ -12,3 +11,6 @@ const db = mysql.createConnection(
     },
     console.log(`Connected to employees_db database.`)
 );
+
+//switch case?
+//prompt array?
