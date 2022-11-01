@@ -1,6 +1,6 @@
 const { prompt } = require("inquirer");
 const db = require("./db");
-
+const DB = require('./db/index.js')
 require("console.table");
 
 // WHEN I start the application
@@ -95,13 +95,18 @@ function promptOptions() {
 }
 
 function viewEmployees() {
-  db.findAllEmployees;
-  return promptOptions();
+  const newDb = new DB
+  newDb.findAllEmployees();
+  
+  // return promptOptions();
 }
 
 function viewRoles() {}
 
-function viewDepartments() {}
+function viewDepartments() {
+  const newDb = new DB;
+  newDb.findAllDepartments().then(([rows]) => {let employees = rows; console.table(employees);});
+}
 
 function createDepartment() {}
 
