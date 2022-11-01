@@ -11,8 +11,6 @@ const connection = mysql.createConnection(
     console.log(`Connected to employees_db database.`)
 );
 
-//switch case?
-//prompt array?
 
 
 module.exports = connection 

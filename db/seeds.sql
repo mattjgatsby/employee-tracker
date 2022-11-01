@@ -15,11 +15,11 @@ VALUES (11, "Sales Lead", 100000, 1),
        (18, "Account Manager", 160000, 4);
 
 INSERT INTO employee (id, first_name, last_name, role_id, manager_id)
-VALUES  (111,"Louen", "Leoncoeur", 11, 20),
+VALUES  (111,"Louen", "Leoncoeur", 11, null),
         (112, "Alberic", "de Bordeleaux", 12, 20),
-        (113, "Karl", "Franz", 13, 22),
+        (113, "Karl", "Franz", 13, null),
         (114, "Balthasar", "Gelt", 14, 22),
         (115, "Thorek", "Ironbrow", 15, 23),
-        (116, "Belegar", "Ironhammer", 16, 23),
+        (116, "Belegar", "Ironhammer", 16, null),
         (117, "Mannfred", "von Carstein", 17, 24),
-        (118, "Vlad", "von Carstein", 18, 24);
+        (118, "Vlad", "von Carstein", 18, null);
