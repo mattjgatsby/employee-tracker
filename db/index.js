@@ -26,3 +26,4 @@ class DB {
         return this.connection.promise().query('')
     }
 }
+

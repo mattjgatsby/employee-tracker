@@ -1,5 +1,6 @@
 const { prompt } = require("inquirer");
 const db = require("./db");
+
 require("console.table");
 
 // WHEN I start the application
@@ -17,8 +18,7 @@ require("console.table");
 // WHEN I choose to add an employee
 // THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
 // WHEN I choose to update an employee role
-// THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
-
+// THEN I am prompted to select an employee to update and their new role and this information is updated in the database
 
 //prompt.then switch case. view all employee-fucntion. at the end of each function returns to prompt. Create employee
 //needs prompt-list of departments-iterate through-
@@ -57,6 +57,10 @@ function promptOptions() {
         {
           name: "update employee",
           value: "UPDATE_EMPLOYEE",
+        },
+        {
+          name: "quit",
+          value: "QUIT"
         }
       ],
     },
@@ -84,12 +88,15 @@ function promptOptions() {
       case "UPDATE_EMPLOYEE":
         updateEmployee();
         break;
+      case "QUIT":
+        return;
     }
   });
 }
 
 function viewEmployees() {
-
+  db.findAllEmployees;
+  return promptOptions();
 }
 
 function viewRoles() {}
@@ -102,4 +109,4 @@ function createRole() {}
 
 function updateEmployee() {}
 
-promptOptions()
+promptOptions();
