@@ -132,12 +132,46 @@ function createDepartment() {
 }
 
 function createRole() {
-  const newDb = new DB();
-  newDb.createRole().then(([rows]) => {
-    let employees = rows;
-    console.table(employees);
+  prompt([
+    {
+      type: "input",
+      name: "createRole",
+      message: "What is the name of the Role?",
+    },
+    {
+      type: 'input',
+      name: "salary",
+      message: "what is the salary of this role?"
+    },
+    {
+      type: "list",
+      name: "department",
+      message: "What department is this role in?",
+      choices: [
+        {
+          name: "Sales",
+          value: 1
+        },
+        {
+          name: "Legal",
+          value: 2
+        },
+        {
+          name: "Engineering",
+          value: 3
+        },
+        {
+          name: "Fianace",
+          value: 4
+        }
+      ]
+    }
+  ]).then((data) => {
+    const newDb = new DB();
+    newDb.createRole(data);
+    console.log(data);
+    setTimeout(promptOptions, 500);
   });
-  setTimeout(promptOptions, 500);
 }
 
 function updateEmployee() {
