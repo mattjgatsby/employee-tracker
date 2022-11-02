@@ -1,16 +1,8 @@
 const { prompt } = require("inquirer");
 const db = require("./db");
-const DB = require('./db/index.js')
+const DB = require("./db/index.js");
 require("console.table");
 
-// WHEN I start the application
-// THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-// WHEN I choose to view all departments
-// THEN I am presented with a formatted table showing department names and department ids
-// WHEN I choose to view all roles
-// THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-// WHEN I choose to view all employees
-// THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
 // WHEN I choose to add a department
 // THEN I am prompted to enter the name of the department and that department is added to the database
 // WHEN I choose to add a role
@@ -60,8 +52,8 @@ function promptOptions() {
         },
         {
           name: "quit",
-          value: "QUIT"
-        }
+          value: "QUIT",
+        },
       ],
     },
   ]).then((res) => {
@@ -97,32 +89,53 @@ function promptOptions() {
 //LEFT JOIN role on employee.role_id = role.id,
 
 function viewEmployees() {
-  const newDb = new DB
-  newDb.findAllEmployees().then(([rows]) => {let employees = rows; console.table(employees);});
+  const newDb = new DB();
+  newDb.findAllEmployees().then(([rows]) => {
+    let employees = rows;
+    console.table(employees);
+  });
   setTimeout(promptOptions, 500);
 }
 
 function viewRoles() {
-  const newDb = new DB;
-  newDb.findAllRoles().then(([rows]) => {let employees = rows; console.table(employees);});
+  const newDb = new DB();
+  newDb.findAllRoles().then(([rows]) => {
+    let employees = rows;
+    console.table(employees);
+  });
   setTimeout(promptOptions, 500);
 }
 
 function viewDepartments() {
-  const newDb = new DB;
-  newDb.findAllDepartments().then(([rows]) => {let employees = rows; console.table(employees);});
+  const newDb = new DB();
+  newDb.findAllDepartments().then(([rows]) => {
+    let employees = rows;
+    console.table(employees);
+  });
   setTimeout(promptOptions, 500);
 }
 
 function createDepartment() {
-  const newDb = new DB;
-  newDb.createDepartment().then(([rows]) => {let employees = rows; console.table(employees);});
-  setTimeout(promptOptions, 500);
+  prompt([
+    {
+      type: "input",
+      name: "createDepart",
+      message: "What is the name of the Department?",
+    },
+  ]).then((data) => {
+    const newDb = new DB();
+    newDb.createDepartment(data.createDepart);
+    setTimeout(promptOptions, 500);
+  });
+  
 }
 
 function createRole() {
-  const newDb = new DB;
-  newDb.createRole().then(([rows]) => {let employees = rows; console.table(employees);});
+  const newDb = new DB();
+  newDb.createRole().then(([rows]) => {
+    let employees = rows;
+    console.table(employees);
+  });
   setTimeout(promptOptions, 500);
 }
 
