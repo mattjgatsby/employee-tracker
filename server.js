@@ -174,6 +174,66 @@ function createRole() {
   });
 }
 
+function createEmployee() {
+  prompt([
+    {
+      type: "input",
+      name: "first_name",
+      message: "What is the first name of the employee?"
+    },
+    {
+      type: "input",
+      name: "last_name",
+      message: "What is the last name of the employee?"
+    },
+    {
+      type: "list",
+      name: "employeeRole",
+      message: "What is the role the employee is in?",
+      choices: [
+        {
+          name: "Sales Lead",
+          value: 1
+        },
+        {
+          name: "Salesperson",
+          value: 2
+        },
+        {
+          name: "lawyer",
+          value: 3
+        },
+        {
+          name: "Legal Team Lead",
+          value: 4
+        },
+        {
+          name: "Software Engineer",
+          value: 5
+        },
+        {
+          name: "Lead Engineer",
+          value: 6
+        },
+        {
+          name: "Accountant",
+          value: 7
+        },
+        {
+          name: "Account Manager",
+          value: 8
+        }
+      ]
+    }
+  ]).then((data) => {
+    const newDb = new DB();
+    newDb.createEmployee(data);
+    console.log(data);
+    setTimeout(promptOptions, 500);
+  });
+}
+
+
 function updateEmployee() {
   setTimeout(promptOptions, 500);
 }
