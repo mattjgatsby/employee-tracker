@@ -224,6 +224,29 @@ function createEmployee() {
           value: 8
         }
       ]
+    },
+    {
+      type: "list",
+      name: "employeeManager",
+      message: "Who is the manager of this employee?",
+      choices: [
+        {
+          name: "Louen Leoncoeur",
+          value: 1
+        },
+        {
+          name: "Karl Franz",
+          value: 3
+        },
+        {
+          name: "Thorek Ironbrow",
+          value: 5
+        },
+        {
+          name: "Mannfred von Carstein",
+          value: 7
+        }
+      ]
     }
   ]).then((data) => {
     const newDb = new DB();

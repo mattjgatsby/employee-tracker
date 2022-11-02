@@ -49,6 +49,7 @@ class DB {
       first_name: employee.first_name,
       last_name: employee.last_name,
       role_id: employee.employeeRole,
+      manager_id: employee.employeeManager
     });
   }
   updateEmployeeRole() {
