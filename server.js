@@ -94,24 +94,40 @@ function promptOptions() {
   });
 }
 
+//LEFT JOIN role on employee.role_id = role.id,
+
 function viewEmployees() {
   const newDb = new DB
-  newDb.findAllEmployees();
-  
-  // return promptOptions();
+  newDb.findAllEmployees().then(([rows]) => {let employees = rows; console.table(employees);});
+  setTimeout(promptOptions, 500);
 }
 
-function viewRoles() {}
+function viewRoles() {
+  const newDb = new DB;
+  newDb.findAllRoles().then(([rows]) => {let employees = rows; console.table(employees);});
+  setTimeout(promptOptions, 500);
+}
 
 function viewDepartments() {
   const newDb = new DB;
   newDb.findAllDepartments().then(([rows]) => {let employees = rows; console.table(employees);});
+  setTimeout(promptOptions, 500);
 }
 
-function createDepartment() {}
+function createDepartment() {
+  const newDb = new DB;
+  newDb.createDepartment().then(([rows]) => {let employees = rows; console.table(employees);});
+  setTimeout(promptOptions, 500);
+}
 
-function createRole() {}
+function createRole() {
+  const newDb = new DB;
+  newDb.createRole().then(([rows]) => {let employees = rows; console.table(employees);});
+  setTimeout(promptOptions, 500);
+}
 
-function updateEmployee() {}
+function updateEmployee() {
+  setTimeout(promptOptions, 500);
+}
 
 promptOptions();

@@ -21,5 +21,4 @@ VALUES  (111,"Louen", "Leoncoeur", 11, null),
         (114, "Balthasar", "Gelt", 14, 22),
         (115, "Thorek", "Ironbrow", 15, 23),
         (116, "Belegar", "Ironhammer", 16, null),
-        (117, "Mannfred", "von Carstein", 17, 24),
-        (118, "Vlad", "von Carstein", 18, null);
+        (117, "Mannfred", "von Carstein", 17, 24);

@@ -20,7 +20,6 @@ CREATE TABLE role (
     ON DELETE SET NULL
 
 );
-
 CREATE TABLE employee (
     id INT,
     first_name VARCHAR(30),
