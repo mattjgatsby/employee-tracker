@@ -125,6 +125,7 @@ function createDepartment() {
   ]).then((data) => {
     const newDb = new DB();
     newDb.createDepartment(data.createDepart);
+    console.log(data.createDepart);
     setTimeout(promptOptions, 500);
   });
   
