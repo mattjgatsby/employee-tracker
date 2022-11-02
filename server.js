@@ -81,7 +81,7 @@ function promptOptions() {
         updateEmployee();
         break;
       case "QUIT":
-        return;
+        process.exit(0);
     }
   });
 }
